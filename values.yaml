@@ -4,9 +4,15 @@ keycloak:
     adminPassword: admin123
 
   production: false
+
+  proxy: edge
   proxyAddressForwarding: true
 
-  extraEnvVarsCM: ""
+  extraEnvVars:
+    - name: KC_PROXY
+      value: edge
+
+  extraEnvVarsCM: ""  # Không dùng configmap ngoài
 
   service:
     type: ClusterIP
