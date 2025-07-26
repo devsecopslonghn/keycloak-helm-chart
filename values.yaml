@@ -1,0 +1,15 @@
+keycloak:
+  auth:
+    adminUser: admin
+    adminPassword: admin123
+
+  production: false
+  proxyAddressForwarding: true
+
+  service:
+    type: ClusterIP
+    ports:
+      http: 8080
+
+  ingress:
+    enabled: false
