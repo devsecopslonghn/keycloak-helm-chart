@@ -6,7 +6,7 @@ keycloak:
   production: false
   proxyAddressForwarding: true
 
-  extraEnvVarsCM: ""  # ← FIX LỖI
+  extraEnvVarsCM: ""  # ← Fix lỗi nếu không có ConfigMap
 
   service:
     type: ClusterIP
@@ -15,3 +15,17 @@ keycloak:
 
   ingress:
     enabled: false
+
+  startupProbe:
+    enabled: true
+    initialDelaySeconds: 60
+    failureThreshold: 30
+    timeoutSeconds: 5
+    periodSeconds: 10
+
+  readinessProbe:
+    enabled: true
+    initialDelaySeconds: 30
+    failureThreshold: 15
+    timeoutSeconds: 5
+    periodSeconds: 10
