@@ -6,6 +6,8 @@ keycloak:
   production: false
   proxyAddressForwarding: true
 
+  extraEnvVarsCM: ""  # ← FIX LỖI
+
   service:
     type: ClusterIP
     ports:
