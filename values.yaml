@@ -6,7 +6,7 @@ keycloak:
   production: false
   proxyAddressForwarding: true
 
-  extraEnvVarsCM: ""  # ← Fix lỗi nếu không có ConfigMap
+  extraEnvVarsCM: ""
 
   service:
     type: ClusterIP
@@ -15,6 +15,13 @@ keycloak:
 
   ingress:
     enabled: false
+
+  postgresql:
+    enabled: true
+    auth:
+      username: bn_keycloak
+      password: mysecretpass123
+      database: bitnami_keycloak
 
   startupProbe:
     enabled: true
